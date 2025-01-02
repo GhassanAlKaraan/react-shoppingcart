@@ -6,10 +6,11 @@ import {
 } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout.jsx";
 import HomePage from "./pages/HomePage";
-import JobsPage from "./pages/JobsPage.jsx";
-import JobPage, { jobLoader } from "./pages/JobPage.jsx";
+import ProductsPage from "./pages/ProductsPage.jsx";
+import LoginPage from "./pages//LoginPage.jsx";
+import { jobLoader } from "./pages/JobPage.jsx";
 import NotFoundPage from "./pages/NotFound.jsx";
-import AddJobPage from "./pages/AddJobPage.jsx";
+import AddProductPage from "./pages/AddProductPage.jsx";
 import EditJobPage from "./pages/EditJobPage.jsx";
 
 //
@@ -18,26 +19,26 @@ import { toast } from "react-toastify";
 
 const App = () => {
 
-  const addJob = async (newJob) => {
-    const res = await fetch('/api/jobs', {
+  const addJob = async (newProduct) => {
+    const res = await fetch('/api/products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newJob)
+      body: JSON.stringify(newProduct)
     });
     const data = await res.json();
     const success = res.ok;
-    console.log('Job Added:', data);
-    if (!success) { toast.error("Could Not Add Job. Please try again later."); }
-    else { toast.success("Job Added Successfully."); }
+    console.log('Product Added:', data);
+    if (!success) { toast.error("Could Not Add Product. Please try again later."); }
+    else { toast.success("Product Added Successfully."); }
   };
 
-  const deleteJob = async (id) => {
-    const res = await fetch(`/api/jobs/${id}`, { method: 'DELETE' });
-    const success = res.ok;
-    console.log(success ? `Job deleted successfully: ${id}` : `Could not delete job: ${id}`);
-    if (!success) { toast.error("Could Not Delete Job. Please try again later."); }
-    else { toast.success("Job Deleted Successfully."); }
-  };
+  // const deleteJob = async (id) => {
+  //   const res = await fetch(`/api/jobs/${id}`, { method: 'DELETE' });
+  //   const success = res.ok;
+  //   console.log(success ? `Job deleted successfully: ${id}` : `Could not delete job: ${id}`);
+  //   if (!success) { toast.error("Could Not Delete Job. Please try again later."); }
+  //   else { toast.success("Job Deleted Successfully."); }
+  // };
 
   const updateJob = async (id, updatedJob) => {
     const res = await fetch(`/api/jobs/${id}`, { method: 'PUT', body: JSON.stringify(updatedJob) });
@@ -51,10 +52,11 @@ const App = () => {
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/jobs" element={<JobsPage />} />
-        <Route path="/add-job" element={<AddJobPage addJobSubmit={addJob} />} />
-        <Route path="/jobs/:id" element={<JobPage deleteJob={deleteJob} />} loader={jobLoader} />
-        <Route path="/edit-job/:id" element={<EditJobPage updateJobSubmit={updateJob} />} loader={jobLoader} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/add-product" element={<AddProductPage addJobSubmit={addJob} />} />
+        {/* <Route path="/jobs/:id" element={<JobPage deleteJob={deleteJob} />} loader={jobLoader} /> */}
+        <Route path="/edit-product/:id" element={<EditJobPage updateJobSubmit={updateJob} />} loader={jobLoader} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )

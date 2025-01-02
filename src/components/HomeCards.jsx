@@ -8,29 +8,35 @@ const HomeCards = () => {
 
 
           <Card>
-            <h2 className="text-2xl font-bold">For Developers</h2>
+            <h2 className="text-2xl font-bold">For Users</h2>
             <p className="mt-2 mb-4">
-              Browse our React jobs and start your career today
+              Browse our products and find the perfect one for you
             </p>
             <Link
-              to="/jobs"
+              to="/products"
               className="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
             >
-              Browse Jobs
+              Browse Products
             </Link>
           </Card>
 
 
-          <Card bg="bg-indigo-100">
-            <h2 className="text-2xl font-bold">For Employers</h2>
+          <Card bg="bg-red-100">
+            <h2 className="text-2xl font-bold">For Admins</h2>
             <p className="mt-2 mb-4">
-              List your job to find the perfect developer for the role
+              Manage products and users in the admin panel
             </p>
             <Link
-              to="/add-job"
-              className="inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600"
+              to="/add-product"
+              className="inline-block bg-red-500 text-white rounded-lg px-4 py-2 hover:bg-red-600"
             >
-              Add Job
+              Add Product
+            </Link>
+            <Link
+              to="/add-user"
+              className="inline-block bg-red-500 text-white rounded-lg px-4 py-2 hover:bg-red-600 ml-2"
+            >
+              Add User
             </Link>
           </Card>
 

@@ -1,0 +1,109 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Watch",
+      "brand": "Samsung",
+      "price": 100.00,
+      "inventory": 22,
+      "description": "Samsung Gadgets",
+      "category": {
+        "id": 1,
+        "name": "Gadgets"
+      },
+      "images": [
+        {
+          "imageId": 3,
+          "imageName": "Screenshot 2024-12-18 104954.png",
+          "downloadUrl": "http://localhost:9191/api/v1/images/image/download/3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "brand": "Apple",
+      "price": 999.00,
+      "inventory": 50,
+      "description": "Latest iPhone model",
+      "category": {
+        "id": 2,
+        "name": "Mobile Phones"
+      },
+      "images": [
+        {
+          "imageId": 4,
+          "imageName": "Screenshot 2024-12-19 115432.png",
+          "downloadUrl": "http://localhost:9191/api/v1/images/image/download/3"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Headphones",
+      "brand": "Sony",
+      "price": 299.00,
+      "inventory": 15,
+      "description": "Noise-cancelling headphones",
+      "category": {
+        "id": 3,
+        "name": "Audio Equipment"
+      },
+      "images": [
+        {
+          "imageId": 5,
+          "imageName": "Screenshot 2024-12-20 133754.png",
+          "downloadUrl": "http://localhost:9191/api/v1/images/image/download/3"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Smart TV",
+      "brand": "LG",
+      "price": 1200.00,
+      "inventory": 10,
+      "description": "4K UHD Smart TV",
+      "category": {
+        "id": 4,
+        "name": "Home Entertainment"
+      },
+      "images": [
+        {
+          "imageId": 6,
+          "imageName": "Screenshot 2024-12-21 144321.png",
+          "downloadUrl": "http://localhost:9191/api/v1/images/image/download/3"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Laptop",
+      "brand": "Dell",
+      "price": 850.00,
+      "inventory": 30,
+      "description": "High-performance laptop for work and gaming",
+      "category": {
+        "id": 5,
+        "name": "Computers"
+      },
+      "images": [
+        {
+          "imageId": 7,
+          "imageName": "Screenshot 2024-12-22 152943.png",
+          "downloadUrl": "http://localhost:9191/api/v1/images/image/download/3"
+        },
+        {
+          "imageId": 8,
+          "imageName": "Screenshot 2024-12-22 152983.png",
+          "downloadUrl": "http://localhost:9191/api/v1/images/image/download/3"
+        },
+        {
+          "imageId": 9,
+          "imageName": "Screenshot 2024-12-22 152993.png",
+          "downloadUrl": "http://localhost:9191/api/v1/images/image/download/3"
+        }
+      ]
+    }
+  ]
+}
