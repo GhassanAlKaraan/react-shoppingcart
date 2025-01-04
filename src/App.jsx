@@ -19,7 +19,7 @@ import { toast } from "react-toastify";
 
 const App = () => {
 
-  const addJob = async (newProduct) => {
+  const addProduct = async (newProduct) => {
     const res = await fetch('/api/products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -27,6 +27,7 @@ const App = () => {
     });
     const data = await res.json();
     const success = res.ok;
+
     console.log('Product Added:', data);
     if (!success) { toast.error("Could Not Add Product. Please try again later."); }
     else { toast.success("Product Added Successfully."); }
@@ -54,7 +55,7 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products" element={<ProductsPage />} />
-        <Route path="/add-product" element={<AddProductPage addJobSubmit={addJob} />} />
+        <Route path="/add-product" element={<AddProductPage addJobSubmit={addProduct} />} />
         {/* <Route path="/jobs/:id" element={<JobPage deleteJob={deleteJob} />} loader={jobLoader} /> */}
         <Route path="/edit-product/:id" element={<EditJobPage updateJobSubmit={updateJob} />} loader={jobLoader} />
         <Route path="*" element={<NotFoundPage />} />
