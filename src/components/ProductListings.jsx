@@ -12,17 +12,17 @@ const ProductListings = () => {
   // in most cases we use empty array []
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = '/api/products';
+      const apiUrl = `/api/products/all`;
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        setProducts(data);
+        setProducts(data.data);
       } catch (e) {
         console.log(`Error fetching data: ${e}`);
       } finally {
         setTimeout(() => {
           setLoading(false);
-        }, 200);
+        }, 100);
 
         // setLoading(false);
       }

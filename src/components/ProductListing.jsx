@@ -15,7 +15,10 @@ const ProductListing = ({ product }) => {
           {product.description}
         </div>
 
-        <h3 className="text-indigo-500 mb-2">${product.price}</h3>
+        <div className="flex justify-between">
+          <h3 className="text-indigo-700 mb-2"><strong>${product.price}</strong></h3>
+          <h3 className="text-indigo-500 mb-2">{product.inventory} Left</h3>
+        </div>
 
         <div className="border border-gray-100 mb-5"></div>
 
@@ -33,7 +36,7 @@ const ProductListing = ({ product }) => {
         {product.images.map((image) => (
           <img
             key={image.imageId}
-            src={image.downloadUrl}
+            src={`/server${image.downloadUrl}`}
             alt={image.imageName}
             className="w-16 h-16 object-cover rounded-lg"
           />

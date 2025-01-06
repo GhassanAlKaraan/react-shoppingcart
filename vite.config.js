@@ -8,11 +8,15 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:5500',
-        // target: 'http://localhost:9191/api/v1', //TODO use this instead for the new backend
+        target: 'http://localhost:9191/api/v1',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
+      '/server': {
+        target: 'http://localhost:9191',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/server/, '')
+      }
     }
   }
 });
