@@ -32,12 +32,12 @@ const HomeCards = () => {
             >
               Add Product
             </Link>
-            <Link
+            {/* <Link
               to="/add-user"
               className="inline-block bg-red-500 text-white rounded-lg px-4 py-2 hover:bg-red-600 ml-2"
             >
               Add User
-            </Link>
+            </Link> */}
           </Card>
 
 

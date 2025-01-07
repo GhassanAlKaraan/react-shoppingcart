@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { FaCartShopping } from "react-icons/fa6";
-import { FaBullseye } from "react-icons/fa";
 
-const ProductListing = ({ product }) => {
+const ProductPage = ({ product }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -23,17 +21,9 @@ const ProductListing = ({ product }) => {
     <div className="bg-gradient-to-br from-white to-gray-100 rounded-2xl shadow-lg relative overflow-hidden">
       <div className="p-6">
         {/* Product Details */}
-        <div className="flex justify-between align-bottom">
-          <div className="mb-6">
-            <span className="text-sm font-medium text-gray-500">{product.brand}</span>
-            <h3 className="text-2xl font-bold text-gray-800 mt-1">{product.name}</h3>
-          </div>
-          <Link
-            to="/"
-            className="inline-block py-4"
-          >
-            <FaBullseye className="text-2xl text-indigo-700" />
-          </Link>
+        <div className="mb-6">
+          <span className="text-sm font-medium text-gray-500">{product.brand}</span>
+          <h3 className="text-2xl font-bold text-gray-800 mt-1">{product.name}</h3>
         </div>
 
         {/* Carousel */}
@@ -54,8 +44,8 @@ const ProductListing = ({ product }) => {
             </div>
           </div>
 
-          {
-            product.images.length > 1 ? (<>
+          {product.images.length > 1 && (
+            <>
               <button
                 onClick={handlePrev}
                 className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-red-600 text-white p-2 rounded-full shadow-md hover:bg-black"
@@ -68,9 +58,8 @@ const ProductListing = ({ product }) => {
               >
                 ›
               </button>
-            </>) : null}
-
-
+            </>
+          )}
         </div>
 
         <p className="text-gray-600 text-sm leading-relaxed mb-4">{product.description}</p>
@@ -93,7 +82,8 @@ const ProductListing = ({ product }) => {
         </button>
       </div>
     </div>
+
   );
 };
 
-export default ProductListing;
+export default ProductPage;

@@ -8,10 +8,10 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage.jsx";
 import LoginPage from "./pages//LoginPage.jsx";
-// import { jobLoader } from "./pages/JobPage.jsx";
+// import ProductPage, { productLoader } from "./pages/ProductPage.jsx";
 import NotFoundPage from "./pages/NotFound.jsx";
 import AddProductPage from "./pages/AddProductPage.jsx";
-// import EditJobPage from "./pages/EditJobPage.jsx";
+// import EditProductPage from "./pages/EditProductPage.jsx";
 
 //
 import { toast } from "react-toastify";
@@ -33,7 +33,7 @@ const App = () => {
     else { toast.success("Product Added Successfully."); }
   };
 
-  // const deleteJob = async (id) => {
+  // const deleteProduct = async (id) => {
   //   const res = await fetch(`/api/jobs/${id}`, { method: 'DELETE' });
   //   const success = res.ok;
   //   console.log(success ? `Job deleted successfully: ${id}` : `Could not delete job: ${id}`);
@@ -41,7 +41,7 @@ const App = () => {
   //   else { toast.success("Job Deleted Successfully."); }
   // };
 
-  // const updateJob = async (id, updatedJob) => {
+  // const updateProduct = async (id, updatedJob) => {
   //   const res = await fetch(`/api/jobs/${id}`, { method: 'PUT', body: JSON.stringify(updatedJob) });
   //   const success = res.ok;
   //   console.log(success ? `Job updated successfully: ${id}` : `Could not update job: ${id}`);
@@ -56,8 +56,8 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/add-product" element={<AddProductPage addJobSubmit={addProduct} />} />
-        {/* <Route path="/jobs/:id" element={<JobPage deleteJob={deleteJob} />} loader={jobLoader} /> */}
-        {/* <Route path="/edit-product/:id" element={<EditJobPage updateJobSubmit={updateJob} />} loader={jobLoader} /> */}
+        {/* <Route path="/products/:id" element={<ProductPage deleteJob={deleteProduct} />} loader={productLoader} /> */}
+        {/* <Route path="/edit-product/:id" element={<EditProductPage updateJobSubmit={updateProduct} />} loader={productLoader} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )

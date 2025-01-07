@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useNavigate, useLoaderData, useParams } from "react-router-dom";
 
-const EditJobPage = ({ updateJobSubmit }) => {
+const EditProductPage = ({ updateJobSubmit }) => {
   const job = useLoaderData();
 
   const [title, setTitle] = useState(job.title);
@@ -224,4 +224,4 @@ const EditJobPage = ({ updateJobSubmit }) => {
   );
 };
 
-export default EditJobPage;
+export default EditProductPage;
