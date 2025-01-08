@@ -36,7 +36,7 @@ const ProductListings = () => {
     <section className="bg-blue-50 px-4 py-2">
       <div className="flex justify-center mb-4">
         <button
-          className="flex bg-black text-white px-5 py-2 rounded"
+          className="flex bg-transparent hover:bg-white text-gray-500 hover:text-black font-bold border-2 border-gray-500 px-5 py-2 rounded-lg"
           onClick={() => setSearch(!search)}
         >
           Search By <IoIosSearch className="text-2xl ml-2 mt-0" />

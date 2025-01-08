@@ -21,12 +21,14 @@ const AddProductPage = () => {
   const navigate = useNavigate();
   const addProduct = async (newProduct) => {
     try {
+      const token = localStorage.getItem('shops-jwt');
       const res = await fetch(`/api/products/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjFAZW1haWwuY29tIiwiaWQiOjYsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzM2MzI1OTA4LCJleHAiOjE3MzYzOTc5MDh9.jRFadIvV9XxkUS1OfYH4FTY32DP_1PEleSn8l1tZrdk'
-        }, body: JSON.stringify(newProduct)
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(newProduct)
       });
       const data = await res.json();
 
@@ -73,7 +75,7 @@ const AddProductPage = () => {
     <section className="bg-indigo-50">
       <div className="container m-auto max-w-2xl py-24">
         {loading ? <Spinner /> : (
-          <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
+          <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-2xl border m-4 md:m-0">
             <form onSubmit={submitForm}>
               <h2 className="text-3xl text-center font-semibold mb-6">Add Product</h2>
 

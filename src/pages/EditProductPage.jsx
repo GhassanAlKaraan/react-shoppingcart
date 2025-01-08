@@ -28,11 +28,12 @@ const EditProductPage = () => {
 
   const updateProduct = async (updatedProduct) => {
     try {
+      const token = localStorage.getItem('shops-jwt');
       const res = await fetch(`/api/products/product/${product.id}/update`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjFAZW1haWwuY29tIiwiaWQiOjYsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzM2MzI1OTA4LCJleHAiOjE3MzYzOTc5MDh9.jRFadIvV9XxkUS1OfYH4FTY32DP_1PEleSn8l1tZrdk'
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(updatedProduct)
       });

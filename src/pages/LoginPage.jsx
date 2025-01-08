@@ -13,8 +13,6 @@ const LoginPage = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      console.log(`Email: ${email}, Password: ${password}`);
-
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
@@ -28,6 +26,8 @@ const LoginPage = () => {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('shops-jwt', data.data.token); // Save JWT to local storage
         toast.success('Login successful!');
         navigate('/'); // Redirect to home page
       } else if (response.status === 401) {
@@ -79,7 +79,7 @@ const LoginPage = () => {
           {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
           <button
             type="submit"
-            className="w-full bg-red-500 text-white text-lg py-2 hover:bg-red-600 rounded-md"
+            className="w-full bg-red-700 text-white text-lg py-2 hover:bg-red-600 rounded-md"
             disabled={isLoading}
           >
             {isLoading ? 'Loading...' : 'Log In'}

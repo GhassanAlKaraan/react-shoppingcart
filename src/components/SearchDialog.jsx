@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import { X } from 'lucide-react';
 
 const SearchDialog = ({ onSearch, onClose }) => {
   const [searchParams, setSearchParams] = useState({
@@ -66,9 +65,8 @@ const SearchDialog = ({ onSearch, onClose }) => {
           <h2 className="text-xl font-semibold">Search Products</h2>
           <button
             onClick={onClose}
-            className="p-1 hover:bg-gray-100 rounded-full"
-          >
-            <X className="h-6 w-6" />
+            className="p-1 hover:bg-gray-100 rounded-full text-xl px-3"
+          > X
           </button>
         </div>
 

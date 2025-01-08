@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { IoIosLock } from "react-icons/io";
 import Card from "./Card";
 const HomeCards = () => {
   return (
@@ -22,13 +23,13 @@ const HomeCards = () => {
 
 
           <Card bg="bg-red-100">
-            <h2 className="text-2xl font-bold">For Admins</h2>
+            <h2 className="flex text-2xl font-bold">For Admins <IoIosLock className="ml-1 text-3xl pb-1" /> </h2>
             <p className="mt-2 mb-4">
               Manage products and users in the admin panel
             </p>
             <Link
               to="/add-product"
-              className="inline-block bg-red-500 text-white rounded-lg px-4 py-2 hover:bg-red-600"
+              className="inline-block justify-start bg-red-700 text-white rounded-lg px-4 py-2 hover:bg-red-600"
             >
               Add Product
             </Link>

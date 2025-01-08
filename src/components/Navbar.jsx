@@ -33,11 +33,11 @@ const Navbar = () => {
                   className={linkClass}>
                   Products
                 </NavLink>
-                <NavLink
+                {/* <NavLink
                   to="/add-product"
                   className={linkClass}>
                   Add Product
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   to="/my-cart"
                   className={linkClass}>
@@ -48,10 +48,15 @@ const Navbar = () => {
                   className={linkClass}>
                   My Orders
                 </NavLink>
-                <NavLink
+                {/* <NavLink
                   to="/login"
                   className={linkClass}>
                   Login
+                </NavLink> */}
+                <NavLink
+                  to="/account"
+                  className={linkClass}>
+                  Account
                 </NavLink>
               </div>
             </div>

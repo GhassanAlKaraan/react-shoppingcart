@@ -11,7 +11,6 @@
     "server": "json-server --watch src/products.json --port 5500"
   },
   "dependencies": {
-    "lucide-react": "^0.469.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
