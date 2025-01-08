@@ -8,23 +8,13 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage.jsx";
 import LoginPage from "./pages//LoginPage.jsx";
-// import ProductPage, { productLoader } from "./pages/ProductPage.jsx";
+import ProductPage, { productLoader } from "./pages/ProductPage.jsx";
 import NotFoundPage from "./pages/NotFound.jsx";
 import AddProductPage from "./pages/AddProductPage.jsx";
 // import EditProductPage from "./pages/EditProductPage.jsx";
 
 
 const App = () => {
-
-
-
-  // const deleteProduct = async (id) => {
-  //   const res = await fetch(`/api/jobs/${id}`, { method: 'DELETE' });
-  //   const success = res.ok;
-  //   console.log(success ? `Job deleted successfully: ${id}` : `Could not delete job: ${id}`);
-  //   if (!success) { toast.error("Could Not Delete Job. Please try again later."); }
-  //   else { toast.success("Job Deleted Successfully."); }
-  // };
 
   // const updateProduct = async (id, updatedJob) => {
   //   const res = await fetch(`/api/jobs/${id}`, { method: 'PUT', body: JSON.stringify(updatedJob) });
@@ -41,7 +31,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/add-product" element={<AddProductPage />} />
-        {/* <Route path="/products/:id" element={<ProductPage deleteJob={deleteProduct} />} loader={productLoader} /> */}
+        <Route path="/products/:id" element={<ProductPage />} loader={productLoader} />
         {/* <Route path="/edit-product/:id" element={<EditProductPage />} loader={productLoader} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Route>

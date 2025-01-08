@@ -29,7 +29,7 @@ const ProductListing = ({ product }) => {
             <h3 className="text-2xl font-bold text-gray-800 mt-1">{product.name}</h3>
           </div>
           <Link
-            to="/"
+            to={`/products/${product.id}`}
             className="inline-block py-4"
           >
             <FaBullseye className="text-2xl text-indigo-700" />
