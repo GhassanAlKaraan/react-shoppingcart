@@ -20,11 +20,7 @@ const ProductListings = () => {
       } catch (e) {
         console.log(`Error fetching data: ${e}`);
       } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 100);
-
-        // setLoading(false);
+        setLoading(false);
       }
     };
 

@@ -38,21 +38,23 @@ const ProductListing = ({ product }) => {
 
         {/* Carousel */}
         <div className="relative mb-6">
-          <div className="relative w-full h-48 overflow-hidden">
-            <div
-              className="flex transition-transform duration-500"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {product.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={`/server${image.downloadUrl}`}
-                  alt={image.imageName}
-                  className="w-full h-48 object-contain flex-shrink-0"
-                />
-              ))}
+          {product.images.length > 0 ? (
+            <div className="relative w-full h-48 overflow-hidden">
+              <div
+                className="flex transition-transform duration-500"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {product.images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={`/server${image.downloadUrl}`}
+                    alt={image.imageName}
+                    className="w-full h-48 object-contain flex-shrink-0"
+                  />
+                ))}
+              </div>
             </div>
-          </div>
+          ) : <div className="flex justify-center align-middle text-sm text-gray-400">No Image</div>}
 
           {
             product.images.length > 1 ? (<>

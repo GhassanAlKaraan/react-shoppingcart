@@ -13,25 +13,10 @@ import NotFoundPage from "./pages/NotFound.jsx";
 import AddProductPage from "./pages/AddProductPage.jsx";
 // import EditProductPage from "./pages/EditProductPage.jsx";
 
-//
-import { toast } from "react-toastify";
-//
 
 const App = () => {
 
-  const addProduct = async (newProduct) => {
-    const res = await fetch('/api/products', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newProduct)
-    });
-    const data = await res.json();
-    const success = res.ok;
 
-    console.log('Product Added:', data);
-    if (!success) { toast.error("Could Not Add Product. Please try again later."); }
-    else { toast.success("Product Added Successfully."); }
-  };
 
   // const deleteProduct = async (id) => {
   //   const res = await fetch(`/api/jobs/${id}`, { method: 'DELETE' });
@@ -55,9 +40,9 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products" element={<ProductsPage />} />
-        <Route path="/add-product" element={<AddProductPage addJobSubmit={addProduct} />} />
+        <Route path="/add-product" element={<AddProductPage />} />
         {/* <Route path="/products/:id" element={<ProductPage deleteJob={deleteProduct} />} loader={productLoader} /> */}
-        {/* <Route path="/edit-product/:id" element={<EditProductPage updateJobSubmit={updateProduct} />} loader={productLoader} /> */}
+        {/* <Route path="/edit-product/:id" element={<EditProductPage />} loader={productLoader} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
