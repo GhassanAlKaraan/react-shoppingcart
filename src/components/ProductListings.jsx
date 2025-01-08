@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductListing from "./ProductListing";
 import Spinner from "./Spinner";
+import { IoIosSearch } from "react-icons/io";
 import SearchDialog from "./SearchDialog";
 
 const ProductListings = () => {
@@ -28,9 +29,9 @@ const ProductListings = () => {
   }, []);
 
   return (
-    <section className="bg-blue-50 px-4 py-10">
+    <section className="bg-blue-50 px-4 py-2">
       <div className="flex justify-center mb-4">
-        <button className="bg-black text-white p-2 rounded" onClick={() => setSearch(!search)}>Search By</button>
+        <button className="flex bg-black text-white px-5 py-2 rounded" onClick={() => setSearch(!search)}>Search By <IoIosSearch className="text-2xl ml-2 mt-0" /></button>
       </div>
 
       <div className="container-xl lg:container m-auto">

@@ -119,7 +119,7 @@ const ProductPage = () => {
           <div className="flex gap-3">
             {/* Delete Button */}
             <button onClick={() => onDeleteClick(product.id)}
-              className="w-full h-[42px] text-red-600 hover:bg-red-100 font-bold rounded-lg shadow-md flex justify-center items-center transition-all duration-200 mt-4"
+              className="w-full h-[42px] text-red-600 hover:bg-red-100 font-bold rounded-lg border-2 border-red-600 flex justify-center items-center transition-all duration-200 mt-4"
             >
               Delete Product
             </button>

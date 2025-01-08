@@ -11,7 +11,7 @@ import LoginPage from "./pages//LoginPage.jsx";
 import ProductPage, { productLoader } from "./pages/ProductPage.jsx";
 import NotFoundPage from "./pages/NotFound.jsx";
 import AddProductPage from "./pages/AddProductPage.jsx";
-// import EditProductPage from "./pages/EditProductPage.jsx";
+import EditProductPage from "./pages/EditProductPage.jsx";
 
 
 const App = () => {
@@ -32,7 +32,7 @@ const App = () => {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/add-product" element={<AddProductPage />} />
         <Route path="/products/:id" element={<ProductPage />} loader={productLoader} />
-        {/* <Route path="/edit-product/:id" element={<EditProductPage />} loader={productLoader} /> */}
+        <Route path="/edit-product/:id" element={<EditProductPage />} loader={productLoader} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
