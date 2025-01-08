@@ -35,7 +35,7 @@ const AddProductPage = () => {
       }
 
       toast.success("Product Added Successfully.");
-      return data.id;
+      return data.data.id;
     } catch (error) {
       toast.error(error.message || "Could Not Add Product. Please try again later.");
       return null;
@@ -59,7 +59,7 @@ const AddProductPage = () => {
       const productId = await addProduct(newProduct);
 
       if (productId) {
-        navigate(`/edit-product/${productId}`);
+        navigate(`/products/${productId}`);
       }
     } catch (error) {
       console.error('Error submitting form:', error);

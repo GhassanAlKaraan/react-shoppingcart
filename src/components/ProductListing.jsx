@@ -54,7 +54,7 @@ const ProductListing = ({ product }) => {
                 ))}
               </div>
             </div>
-          ) : <div className="flex justify-center align-middle text-sm text-gray-400">No Image</div>}
+          ) : <div className="flex justify-center items-center text-sm text-gray-400 w-full h-48">No Image</div>}
 
           {
             product.images.length > 1 ? (<>
