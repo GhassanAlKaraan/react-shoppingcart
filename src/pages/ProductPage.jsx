@@ -34,6 +34,11 @@ const ProductPage = () => {
           'Authorization': `Bearer ${token}`
         }
       });
+      if (res.status === 401) {
+        navigate('/login');
+        toast.error("Please login as admin first.");
+        return null;
+      }
       const data = await res.json();
 
       if (!res.ok) {
@@ -57,6 +62,11 @@ const ProductPage = () => {
           'Authorization': `Bearer ${token}`
         }
       });
+      if (res.status === 401) {
+        navigate('/login');
+        toast.error("Please login as admin first.");
+        return null;
+      }
       const data = await res.json();
       if (!res.ok) {
         throw new Error(data.message || 'Could not delete product');

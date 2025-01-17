@@ -1,24 +1,19 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { toast } from "react-toastify";
-//
-
 
 const AddProductPage = () => {
-
   const [name, setName] = useState('');
   const [brand, setBrand] = useState('');
   const [price, setPrice] = useState('');
   const [inventory, setInventory] = useState('');
   const [description, setDescription] = useState('');
   const [categoryName, setCategoryName] = useState('');
-  // const [images, setImages] = useState([]);
-
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
   const addProduct = async (newProduct) => {
     try {
       const token = localStorage.getItem('shops-jwt');
@@ -30,6 +25,13 @@ const AddProductPage = () => {
         },
         body: JSON.stringify(newProduct)
       });
+
+      if (res.status === 401) {
+        navigate('/login');
+        toast.error("Please login as admin first.");
+        return null;
+      }
+
       const data = await res.json();
 
       if (!res.ok) {

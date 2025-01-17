@@ -37,6 +37,12 @@ const EditProductPage = () => {
         },
         body: JSON.stringify(updatedProduct)
       });
+
+      if (res.status === 401) {
+        navigate('/login');
+        toast.error("Please login as admin first.");
+        return null;
+      }
       const data = await res.json();
 
       if (!res.ok) {

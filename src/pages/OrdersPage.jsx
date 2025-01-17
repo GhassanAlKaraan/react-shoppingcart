@@ -86,7 +86,7 @@ const OrdersPage = () => {
                 <CardTitle className="flex justify-between">
                   <span>Order #{order.id}</span>
                   <span className="text-sm font-normal">
-                    {new Date(order.createdAt).toLocaleDateString()}
+                    {order.orderDate ? new Date(order.orderDate).toLocaleDateString() : 'N/A'}
                   </span>
                 </CardTitle>
               </CardHeader>
@@ -108,7 +108,7 @@ const OrdersPage = () => {
                       <ul className="space-y-2">
                         {order.items.map((item, index) => (
                           <li key={index} className="flex justify-between">
-                            <span>{item.name}</span>
+                            <span>{item.productName} - <span>{item.productBrand}</span> </span>
                             <span>x{item.quantity}</span>
                           </li>
                         ))}
